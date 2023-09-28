@@ -63,7 +63,8 @@ public class MembresiaController {
         for (String[] data : lista) {
             Membresia_X_UsuarioDTO dto = new Membresia_X_UsuarioDTO();
             dto.setTipoMembresia(data[0]);
-            dto.setPrecioTotal(new BigDecimal(data[1]));
+            dto.setCantidadUsuarios(Integer.parseInt(data[1]));
+            dto.setPrecioTotal(new BigDecimal(data[2]));
             listaDTO.add(dto);
         }
         return listaDTO;

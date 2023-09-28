@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class Membresia_X_UsuarioDTO {
     private String tipoMembresia;
-
+    private int cantidadUsuarios;
     private BigDecimal precioTotal;
 
     public String getTipoMembresia() {
@@ -15,7 +15,13 @@ public class Membresia_X_UsuarioDTO {
         this.tipoMembresia = tipoMembresia;
     }
 
+    public int getCantidadUsuarios() {
+        return cantidadUsuarios;
+    }
 
+    public void setCantidadUsuarios(int cantidadUsuarios) {
+        this.cantidadUsuarios = cantidadUsuarios;
+    }
 
     public BigDecimal getPrecioTotal() {
         return precioTotal;
