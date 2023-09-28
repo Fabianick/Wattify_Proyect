@@ -29,10 +29,9 @@ public class MembresiaServiceImplement implements IMembresiaService {
         mR.deleteById(idMembresia);
     }
 
-
     @Override
     public List<String[]> CantUsuariosPrecioTotalXTipoMembresia() {
-        return mR.CantUsuariosPrecioTotalXTipoMembresia();
+        return null;
     }
 
 
