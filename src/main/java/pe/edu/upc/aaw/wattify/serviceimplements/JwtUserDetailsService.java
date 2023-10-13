@@ -7,8 +7,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.wattify.entities.Users;
-import pe.edu.upc.aaw.wattify.repositories.UserRepository;
+import pe.edu.upc.aaw.wattify.entities.Usuario;
+import pe.edu.upc.aaw.wattify.repositories.IUsuarioRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,11 +16,11 @@ import java.util.List;
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
     @Autowired
-    private UserRepository repo;
+    private IUsuarioRepository repo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users user = repo.findByUsername(username);
+        Usuario user = repo.findByUsername(username);
 
         if(user == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));

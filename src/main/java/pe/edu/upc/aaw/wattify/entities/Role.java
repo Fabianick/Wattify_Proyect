@@ -24,16 +24,17 @@ public class Role implements Serializable {
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
-    private Users user;
+    private Usuario user;
 
 
     //GETTERS AND SETTERES
 
-    public Users getUser() {
+
+    public Usuario getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(Usuario user) {
         this.user = user;
     }
 
