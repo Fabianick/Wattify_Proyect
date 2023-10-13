@@ -1,9 +1,6 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
-import pe.edu.upc.aaw.wattify.entities.Role;
-
 import javax.persistence.Column;
-import java.util.List;
 
 public class UsuarioDTO {
     private int id_usuario;
@@ -13,17 +10,13 @@ public class UsuarioDTO {
     private String Direccion;
     private String DNI;
     private String Celular;
-    private String username;
-    private String password;
-    private Boolean enabled;
-    private List<Role> roles;
 
-    public int getId_usuario() {
+    public int getId() {
         return id_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(int id) {
+        id_usuario = id;
     }
 
     public String getNombres() {
@@ -72,37 +65,5 @@ public class UsuarioDTO {
 
     public void setCelular(String celular) {
         Celular = celular;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
     }
 }

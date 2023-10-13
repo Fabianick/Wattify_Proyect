@@ -1,13 +1,12 @@
 package pe.edu.upc.aaw.wattify.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
-public class Usuario implements Serializable {
+@Table(name = "Usuarios")
+public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
@@ -23,38 +22,27 @@ public class Usuario implements Serializable {
     private String DNI;
     @Column(name = "celular", length = 10, nullable = false)
     private String Celular;
-    @Column(length = 30, unique = true)
-    private String username;
-    @Column(length = 200)
-    private String password;
-    private Boolean enabled;
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Role> roles;
+
 
     public Usuario() {
     }
 
-    public Usuario(int id_usuario, String nombres, String apellidos, String genero, String direccion, String DNI, String celular, String username, String password, Boolean enabled, List<Role> roles) {
-        this.id_usuario = id_usuario;
+    public Usuario(int id, String nombres, String apellidos, String genero, String direccion, String DNI, String celular) {
+        id_usuario = id;
         Nombres = nombres;
         Apellidos = apellidos;
         Genero = genero;
         Direccion = direccion;
         this.DNI = DNI;
         Celular = celular;
-        this.username = username;
-        this.password = password;
-        this.enabled = enabled;
-        this.roles = roles;
     }
 
-    public int getId_usuario() {
+    public int getId() {
         return id_usuario;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(int id) {
+        id_usuario = id;
     }
 
     public String getNombres() {
@@ -105,35 +93,12 @@ public class Usuario implements Serializable {
         Celular = celular;
     }
 
-    public String getUsername() {
-        return username;
+    /*
+    public List<Dispositivo_X_Usuario> getDispositivo_X_Usuario() {
+        return dispositivo_X_Usuario;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Boolean getEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public List<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
+    public void setDispositivo_X_Usuario(List<Dispositivo_X_Usuario> dispositivo_X_Usuario) {
+        this.dispositivo_X_Usuario = dispositivo_X_Usuario;
+    }*/
 }
