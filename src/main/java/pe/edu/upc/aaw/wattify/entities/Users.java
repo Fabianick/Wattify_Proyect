@@ -27,6 +27,20 @@ public class Users implements Serializable {
     @Column(length = 200)
     private String password;
     private Boolean enabled;
+    @Column(name = "nombres", length = 45, nullable = false)
+    private String Nombres;
+    @Column(name = "apellidos", length = 45, nullable = false)
+    private String Apellidos;
+    @Column(name = "genero", length = 30, nullable = false)
+    private String Genero;
+    @Column(name = "direccion", length = 60, nullable = false)
+    private String Direccion;
+    @Column(name = "dni", length = 9, nullable = false)
+    private String DNI;
+    @Column(name = "celular", length = 10, nullable = false)
+    private String Celular;
+
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private List<Role> roles;
@@ -63,6 +77,54 @@ public class Users implements Serializable {
         this.enabled = enabled;
     }
 
+    public String getNombres() {
+        return Nombres;
+    }
+
+    public void setNombres(String nombres) {
+        Nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return Apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        Apellidos = apellidos;
+    }
+
+    public String getGenero() {
+        return Genero;
+    }
+
+    public void setGenero(String genero) {
+        Genero = genero;
+    }
+
+    public String getDireccion() {
+        return Direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        Direccion = direccion;
+    }
+
+    public String getDNI() {
+        return DNI;
+    }
+
+    public void setDNI(String DNI) {
+        this.DNI = DNI;
+    }
+
+    public String getCelular() {
+        return Celular;
+    }
+
+    public void setCelular(String celular) {
+        Celular = celular;
+    }
+
     public List<Role> getRoles() {
         return roles;
     }
@@ -70,5 +132,4 @@ public class Users implements Serializable {
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
-
 }

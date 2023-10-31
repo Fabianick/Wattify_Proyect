@@ -31,4 +31,9 @@ public class UsersServiceImplement implements IUsersService {
     public void insRol(String authority, Long user_id) {
         uR.insRol(authority,user_id);
     }
+
+    @Override
+    public List<String[]> cantidad_usuarios_bygenero() {
+        return uR.cantidad_usuarios_bygenero();
+    }
 }
