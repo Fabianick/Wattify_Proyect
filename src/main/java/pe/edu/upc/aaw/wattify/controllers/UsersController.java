@@ -5,9 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.wattify.dtos.UsersDTO;
+import pe.edu.upc.aaw.wattify.dtos.UsuarioDTO;
+import pe.edu.upc.aaw.wattify.dtos.Usuario_CantidadDTO;
 import pe.edu.upc.aaw.wattify.entities.Users;
+import pe.edu.upc.aaw.wattify.entities.Usuario;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IUsersService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -38,6 +42,28 @@ public class UsersController {
     @PreAuthorize("hasAuthority('ADMIN')")
     public void delete(@PathVariable("id") Long id) {
         uS.delete(id);
+    }
+
+    @PutMapping
+    @PreAuthorize("hasAuthority('ADMIN')or hasAuthority('USER')")
+    public void actualizar(@RequestBody UsersDTO dto){
+        ModelMapper m = new ModelMapper();
+        Users u=m.map(dto,Users.class);
+        uS.insert(u);
+    }
+
+    @GetMapping("/cantidadBygenero")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public List<Usuario_CantidadDTO> Cantidad_usuaarios_by_genero(){
+        List<String[]> lista = uS.cantidad_usuarios_bygenero();
+        List<Usuario_CantidadDTO> listaDTO = new ArrayList<>();
+        for (String[] data : lista) {
+            Usuario_CantidadDTO dto = new Usuario_CantidadDTO();
+            dto.setGeneroUsuario(data[0]);
+            dto.setCantidadUsuario(Integer.parseInt(data[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
     }
 
     @PostMapping("/rolinsert")
