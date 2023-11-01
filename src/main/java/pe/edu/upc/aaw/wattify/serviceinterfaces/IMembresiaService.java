@@ -9,7 +9,7 @@ public interface IMembresiaService {
     public void insert(Membresia membresia);
     public List<Membresia> list();
     public void delete(int idMembresia);
-    public List<String[]>CantUsuariosPrecioTotalXTipoMembresia();
+    public List<String[]>CantUsuariosXTipoMembresiaXMontoRecaudado();
 
 
 }

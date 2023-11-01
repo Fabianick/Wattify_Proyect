@@ -11,11 +11,11 @@ import java.util.List;
 @Repository
 public interface IMembresiaRepository extends JpaRepository<Membresia, Integer> {
 
-@Query(value = "select m.tipo_membresia, count(u.id_usuario) as cantidad_de_usuarios, sum(m.precio) as dinero_generado\n" +
+@Query(value = "select m.tipo_membresia, count(u.id) as Cantidad_De_Usuarios, sum(m.precio) as Monto_Recaudado\n" +
         " from membresia m\n" +
-        " inner join usuarios u \n" +
-        " on m.id_usuario = u.id_usuario\n" +
+        " inner join users u \n" +
+        " on m.id_user = u.id\n" +
         " group by m.tipo_membresia",nativeQuery = true)
-    public List<String[]>CantUsuariosPrecioTotalXTipoMembresia();
+    public List<String[]>CantUsuariosXTipoMembresiaXMontoRecaudado();
 }
 

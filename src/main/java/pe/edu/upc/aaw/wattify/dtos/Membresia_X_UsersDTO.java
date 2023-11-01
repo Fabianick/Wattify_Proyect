@@ -1,8 +1,8 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
 import java.math.BigDecimal;
+public class Membresia_X_UsersDTO {
 
-public class Membresia_X_UsuarioDTO {
     private String tipoMembresia;
     private int cantidadUsuarios;
     private BigDecimal precioTotal;

@@ -1,5 +1,6 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
+import pe.edu.upc.aaw.wattify.entities.Users;
 import pe.edu.upc.aaw.wattify.entities.Usuario;
 
 import java.math.BigDecimal;
@@ -7,11 +8,11 @@ import java.time.LocalDate;
 
 public class MembresiaDTO {
     private int id_Membresia;
-    private String Tipo_Membresia;
+    private String tipoMembresia;
     private LocalDate fechaInicio;
-    private LocalDate Fecha_fin;
-    private BigDecimal Precio;
-    private Usuario usuario;
+    private LocalDate fechaFin;
+    private BigDecimal precio;
+    private Users user;
 
     public int getId_Membresia() {
         return id_Membresia;
@@ -21,12 +22,12 @@ public class MembresiaDTO {
         this.id_Membresia = id_Membresia;
     }
 
-    public String getTipo_Membresia() {
-        return Tipo_Membresia;
+    public String getTipoMembresia() {
+        return tipoMembresia;
     }
 
-    public void setTipo_Membresia(String tipo_Membresia) {
-        Tipo_Membresia = tipo_Membresia;
+    public void setTipoMembresia(String tipoMembresia) {
+        this.tipoMembresia = tipoMembresia;
     }
 
     public LocalDate getFechaInicio() {
@@ -37,27 +38,27 @@ public class MembresiaDTO {
         this.fechaInicio = fechaInicio;
     }
 
-    public LocalDate getFecha_fin() {
-        return Fecha_fin;
+    public LocalDate getFechaFin() {
+        return fechaFin;
     }
 
-    public void setFecha_fin(LocalDate fecha_fin) {
-        Fecha_fin = fecha_fin;
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
     }
 
     public BigDecimal getPrecio() {
-        return Precio;
+        return precio;
     }
 
     public void setPrecio(BigDecimal precio) {
-        Precio = precio;
+        this.precio = precio;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUser() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUser(Users user) {
+        this.user = user;
     }
 }

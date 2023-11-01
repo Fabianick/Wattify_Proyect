@@ -4,13 +4,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.aaw.wattify.dtos.Membresia_X_UsuarioDTO;
 import pe.edu.upc.aaw.wattify.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.wattify.dtos.Usuario_CantidadDTO;
 import pe.edu.upc.aaw.wattify.entities.Usuario;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IUsuarioService;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
