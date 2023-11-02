@@ -63,7 +63,7 @@ public class MembresiaController {
             Membresia_X_UsersDTO dto = new Membresia_X_UsersDTO();
             dto.setTipoMembresia(data[0]);
             dto.setCantidadUsuarios(Integer.parseInt(data[1]));
-            dto.setPrecioTotal(new BigDecimal(data[2]));
+            dto.setMontoRecaudado(new BigDecimal(data[2]));
             listaDTO.add(dto);
         }
         return listaDTO;

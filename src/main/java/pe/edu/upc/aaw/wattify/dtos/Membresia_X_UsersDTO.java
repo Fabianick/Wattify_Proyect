@@ -5,7 +5,7 @@ public class Membresia_X_UsersDTO {
 
     private String tipoMembresia;
     private int cantidadUsuarios;
-    private BigDecimal precioTotal;
+    private BigDecimal montoRecaudado;
 
     public String getTipoMembresia() {
         return tipoMembresia;
@@ -23,11 +23,11 @@ public class Membresia_X_UsersDTO {
         this.cantidadUsuarios = cantidadUsuarios;
     }
 
-    public BigDecimal getPrecioTotal() {
-        return precioTotal;
+    public BigDecimal getMontoRecaudado() {
+        return montoRecaudado;
     }
 
-    public void setPrecioTotal(BigDecimal precioTotal) {
-        this.precioTotal = precioTotal;
+    public void setMontoRecaudado(BigDecimal montoRecaudado) {
+        this.montoRecaudado = montoRecaudado;
     }
 }
