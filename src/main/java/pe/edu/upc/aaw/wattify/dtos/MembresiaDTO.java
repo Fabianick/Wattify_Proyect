@@ -12,7 +12,7 @@ public class MembresiaDTO {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
     private BigDecimal precio;
-    private Users user;
+    private UsersDTO user;
 
     public int getId_Membresia() {
         return id_Membresia;
@@ -54,11 +54,11 @@ public class MembresiaDTO {
         this.precio = precio;
     }
 
-    public Users getUser() {
+    public UsersDTO getUser() {
         return user;
     }
 
-    public void setUser(Users user) {
+    public void setUser(UsersDTO user) {
         this.user = user;
     }
 }
