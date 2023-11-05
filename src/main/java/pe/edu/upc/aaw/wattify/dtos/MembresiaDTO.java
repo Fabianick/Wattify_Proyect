@@ -1,8 +1,5 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
-import pe.edu.upc.aaw.wattify.entities.Users;
-import pe.edu.upc.aaw.wattify.entities.Usuario;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

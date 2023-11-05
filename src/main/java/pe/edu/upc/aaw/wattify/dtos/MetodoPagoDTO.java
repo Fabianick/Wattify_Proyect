@@ -1,9 +1,5 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
-import pe.edu.upc.aaw.wattify.entities.Usuario;
-
-import javax.persistence.Column;
-import java.time.LocalDate;
 public class MetodoPagoDTO {
     private int id;
     private String Tipo_de_pago;

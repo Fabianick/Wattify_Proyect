@@ -6,9 +6,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.wattify.dtos.DispositivosXTiposDTO;
 import pe.edu.upc.aaw.wattify.dtos.TipoDispositivoDTO;
-import pe.edu.upc.aaw.wattify.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.wattify.entities.TipoDispositivo;
-import pe.edu.upc.aaw.wattify.entities.Usuario;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.ITipoDispositivoService;
 
 import java.util.ArrayList;

@@ -2,7 +2,7 @@ package pe.edu.upc.aaw.wattify.dtos;
 
 import pe.edu.upc.aaw.wattify.entities.Membresia;
 import pe.edu.upc.aaw.wattify.entities.Metodo_de_Pago;
-import pe.edu.upc.aaw.wattify.entities.Usuario;
+
 import java.time.LocalDate;
 public class ComprobantePagoDTO {
     private int id;

@@ -5,10 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.wattify.dtos.UsersDTO;
-import pe.edu.upc.aaw.wattify.dtos.UsuarioDTO;
 import pe.edu.upc.aaw.wattify.dtos.Usuario_CantidadDTO;
 import pe.edu.upc.aaw.wattify.entities.Users;
-import pe.edu.upc.aaw.wattify.entities.Usuario;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IUsersService;
 
 import java.util.ArrayList;
