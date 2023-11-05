@@ -15,26 +15,27 @@ public class Dispositivo_X_Usuario {
     @JoinColumn(name = "id_Dispositivo", referencedColumnName = "id_Dispositivo")
     private Dispositivo dispositivo;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario")
-    private Usuario usuario;
+    @JoinColumn(name = "id", referencedColumnName = "id")
+    private Users users;
 
     // validar si no se debe eliminar el constructor  -_-
+
     public Dispositivo_X_Usuario() {
     }
 
-    public Dispositivo_X_Usuario(int id_DxUsuario, int cantidadDispositivos, Dispositivo dispositivo, Usuario usuario) {
+    public Dispositivo_X_Usuario(int id_DxUsuario, int cantidadDispositivos, Dispositivo dispositivo, Users users) {
         this.id_DxUsuario = id_DxUsuario;
         this.cantidadDispositivos = cantidadDispositivos;
         this.dispositivo = dispositivo;
-        this.usuario = usuario;
+        this.users = users;
     }
 
-    public int getId() {
+    public int getId_DxUsuario() {
         return id_DxUsuario;
     }
 
-    public void setId(int id) {
-        this.id_DxUsuario = id;
+    public void setId_DxUsuario(int id_DxUsuario) {
+        this.id_DxUsuario = id_DxUsuario;
     }
 
     public int getCantidadDispositivos() {
@@ -53,11 +54,11 @@ public class Dispositivo_X_Usuario {
         this.dispositivo = dispositivo;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }

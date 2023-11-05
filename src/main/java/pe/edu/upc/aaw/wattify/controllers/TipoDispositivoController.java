@@ -55,7 +55,7 @@ public class TipoDispositivoController {
 
     @GetMapping("/CantidadDeDispositivosXTipo")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public List<DispositivosXTiposDTO> cantidadTotal() {
+    public List<DispositivosXTiposDTO> cantidadTotalDeDispositivosPortioDeDispositivo() {
         List<String[]> lista = tipoDispositivoService.cantidadDispositivosXtipo();
         List<DispositivosXTiposDTO> listaDTO = new ArrayList<>();
         for (String[] data : lista) {

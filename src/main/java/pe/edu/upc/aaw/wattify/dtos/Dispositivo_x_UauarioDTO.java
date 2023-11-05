@@ -1,20 +1,20 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
 import pe.edu.upc.aaw.wattify.entities.Dispositivo;
-import pe.edu.upc.aaw.wattify.entities.Usuario;
+import pe.edu.upc.aaw.wattify.entities.Users;
 
 public class Dispositivo_x_UauarioDTO {
     private int id_DxUsuario;
     private int cantidadDispositivos;
     private Dispositivo dispositivo;
-    private Usuario usuario;
+    private Users users;
 
     public int getId_DxUsuario() {
         return id_DxUsuario;
     }
 
-    public void setId_DxUsuario(int id) {
-        this.id_DxUsuario = id;
+    public void setId_DxUsuario(int id_DxUsuario) {
+        this.id_DxUsuario = id_DxUsuario;
     }
 
     public int getCantidadDispositivos() {
@@ -33,11 +33,11 @@ public class Dispositivo_x_UauarioDTO {
         this.dispositivo = dispositivo;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsers() {
+        return users;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsers(Users users) {
+        this.users = users;
     }
 }
