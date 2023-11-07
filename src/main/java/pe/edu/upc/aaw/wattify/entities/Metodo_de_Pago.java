@@ -9,44 +9,44 @@ import javax.persistence.Table;
 public class Metodo_de_Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_MetodoPago;
 
     @Column(name = "tipo_de_pago", length = 50, nullable = false)
-    private String Tipo_de_pago;
+    private String tipo_de_pago;
 
     @Column(name = "titular", length = 50, nullable = false)
-    private String Titular;
+    private String titular;
 
     public Metodo_de_Pago() {
     }
 
-    public Metodo_de_Pago(int id, String tipo_de_pago, String titular) {
-        this.id = id;
-        Tipo_de_pago = tipo_de_pago;
-        Titular = titular;
+    public Metodo_de_Pago(int id_MetodoPago, String tipo_de_pago, String titular) {
+        this.id_MetodoPago = id_MetodoPago;
+        this.tipo_de_pago = tipo_de_pago;
+        this.titular = titular;
     }
 
-    public int getId() {
-        return id;
+    public int getId_MetodoPago() {
+        return id_MetodoPago;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId_MetodoPago(int id_MetodoPago) {
+        this.id_MetodoPago = id_MetodoPago;
     }
 
     public String getTipo_de_pago() {
-        return Tipo_de_pago;
+        return tipo_de_pago;
     }
 
     public void setTipo_de_pago(String tipo_de_pago) {
-        Tipo_de_pago = tipo_de_pago;
+        this.tipo_de_pago = tipo_de_pago;
     }
 
     public String getTitular() {
-        return Titular;
+        return titular;
     }
 
     public void setTitular(String titular) {
-        Titular = titular;
+        this.titular = titular;
     }
 }

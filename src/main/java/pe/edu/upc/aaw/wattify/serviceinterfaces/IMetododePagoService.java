@@ -7,7 +7,7 @@ import java.util.List;
 public interface IMetododePagoService {
     public void insert(Metodo_de_Pago metodo_de_pago);
     public List<Metodo_de_Pago> list();
-    public void delete(int idMetododePago);
+    public void delete(int id_MetodoPago);
 
 
 }

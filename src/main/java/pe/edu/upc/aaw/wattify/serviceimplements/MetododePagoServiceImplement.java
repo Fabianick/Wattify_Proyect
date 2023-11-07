@@ -25,8 +25,8 @@ public class MetododePagoServiceImplement implements IMetododePagoService {
     }
 
     @Override
-    public void delete(int idMetododePago) {
-        mR.deleteById(idMetododePago);
+    public void delete(int id_MetodoPago) {
+        mR.deleteById(id_MetodoPago);
     }
 
 
