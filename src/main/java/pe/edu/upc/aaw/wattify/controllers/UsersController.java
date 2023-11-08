@@ -33,6 +33,13 @@ public class UsersController {
         }).collect(Collectors.toList());
     }
 
+    @GetMapping("/{id}")
+    public UsersDTO listarId(@PathVariable("id") Long id) {
+        ModelMapper m=new ModelMapper();
+        UsersDTO dto=m.map(uS.listarId(id),UsersDTO.class);
+        return dto;
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Long id) {
         uS.delete(id);
