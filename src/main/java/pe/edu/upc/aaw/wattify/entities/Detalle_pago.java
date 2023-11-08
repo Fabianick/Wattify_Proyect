@@ -27,16 +27,21 @@ public class Detalle_pago {
     @Column(name = "Sub_total_pago", length = 50, nullable = false)
     private int Sub_total_pago;
 
+    @ManyToOne
+    @JoinColumn(name = "idMembresia")
+    private Membresia membresia;
+
     public Detalle_pago() {
     }
 
-    public Detalle_pago(int id, Comprobante_pago comprobante_pago, int consumo_dispositivo, int cantidad_dispositivo, int costo_dispositivo, int sub_total_pago) {
+    public Detalle_pago(int id, Comprobante_pago comprobante_pago, int consumo_dispositivo, int cantidad_dispositivo, int costo_dispositivo, int sub_total_pago, Membresia membresia) {
         this.id = id;
         this.comprobante_pago = comprobante_pago;
         Consumo_dispositivo = consumo_dispositivo;
         Cantidad_dispositivo = cantidad_dispositivo;
         Costo_dispositivo = costo_dispositivo;
         Sub_total_pago = sub_total_pago;
+        this.membresia = membresia;
     }
 
     public int getId() {
@@ -85,5 +90,13 @@ public class Detalle_pago {
 
     public void setSub_total_pago(int sub_total_pago) {
         Sub_total_pago = sub_total_pago;
+    }
+
+    public Membresia getMembresia() {
+        return membresia;
+    }
+
+    public void setMembresia(Membresia membresia) {
+        this.membresia = membresia;
     }
 }

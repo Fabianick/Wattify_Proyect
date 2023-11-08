@@ -2,13 +2,14 @@ package pe.edu.upc.aaw.wattify.dtos;
 
 import pe.edu.upc.aaw.wattify.entities.Membresia;
 import pe.edu.upc.aaw.wattify.entities.Metodo_de_Pago;
+import pe.edu.upc.aaw.wattify.entities.Users;
 
 import java.time.LocalDate;
 public class ComprobantePagoDTO {
     private int id;
     private LocalDate fechaEmision;
     private int costo_total;
-    private Membresia membresia;
+    private UsersDTO user;
     private Metodo_de_Pago metodo_de_pago;
 
     public int getId() {
@@ -35,12 +36,12 @@ public class ComprobantePagoDTO {
         this.costo_total = costo_total;
     }
 
-    public Membresia getMembresia() {
-        return membresia;
+    public UsersDTO getUser() {
+        return user;
     }
 
-    public void setMembresia(Membresia membresia) {
-        this.membresia = membresia;
+    public void setUser(UsersDTO user) {
+        this.user = user;
     }
 
     public Metodo_de_Pago getMetodo_de_pago() {

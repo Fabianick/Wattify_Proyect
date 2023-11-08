@@ -19,8 +19,8 @@ public class Comprobante_pago {
     private Metodo_de_Pago metodo_de_pago;
 
     @ManyToOne
-    @JoinColumn(name = "idMembresia")
-    private Membresia membresia;
+    @JoinColumn(name = "idUser")
+    private Users user;
 
     @Column(name = "Costo_total", length = 50, nullable = false)
     private int Costo_total;
@@ -28,11 +28,11 @@ public class Comprobante_pago {
     public Comprobante_pago() {
     }
 
-    public Comprobante_pago(int id, LocalDate fechaEmision, Metodo_de_Pago metodo_de_pago, Membresia membresia, int costo_total) {
+    public Comprobante_pago(int id, LocalDate fechaEmision, Metodo_de_Pago metodo_de_pago, Users user, int costo_total) {
         this.id = id;
-        fechaEmision = fechaEmision;
+        this.fechaEmision = fechaEmision;
         this.metodo_de_pago = metodo_de_pago;
-        this.membresia = membresia;
+        this.user = user;
         Costo_total = costo_total;
     }
 
@@ -49,7 +49,7 @@ public class Comprobante_pago {
     }
 
     public void setFechaEmision(LocalDate fechaEmision) {
-        fechaEmision = fechaEmision;
+        this.fechaEmision = fechaEmision;
     }
 
     public Metodo_de_Pago getMetodo_de_pago() {
@@ -60,12 +60,12 @@ public class Comprobante_pago {
         this.metodo_de_pago = metodo_de_pago;
     }
 
-    public Membresia getMembresia() {
-        return membresia;
+    public Users getUser() {
+        return user;
     }
 
-    public void setMembresia(Membresia membresia) {
-        this.membresia = membresia;
+    public void setUser(Users user) {
+        this.user = user;
     }
 
     public int getCosto_total() {

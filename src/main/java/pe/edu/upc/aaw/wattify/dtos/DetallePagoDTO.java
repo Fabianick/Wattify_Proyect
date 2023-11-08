@@ -1,6 +1,7 @@
 package pe.edu.upc.aaw.wattify.dtos;
 
 import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
+import pe.edu.upc.aaw.wattify.entities.Membresia;
 
 public class DetallePagoDTO {
     private int id;
@@ -9,6 +10,7 @@ public class DetallePagoDTO {
     private int Cantidad_dispositivo;
     private int Costo_dispositivo;
     private int Sub_total_pago;
+    private Membresia membresia;
 
     public int getId() {
         return id;
@@ -56,5 +58,13 @@ public class DetallePagoDTO {
 
     public void setSub_total_pago(int sub_total_pago) {
         Sub_total_pago = sub_total_pago;
+    }
+
+    public Membresia getMembresia() {
+        return membresia;
+    }
+
+    public void setMembresia(Membresia membresia) {
+        this.membresia = membresia;
     }
 }
