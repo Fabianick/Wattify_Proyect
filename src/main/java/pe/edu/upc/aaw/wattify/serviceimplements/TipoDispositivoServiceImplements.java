@@ -38,6 +38,9 @@ public class TipoDispositivoServiceImplements implements ITipoDispositivoService
         return mR.cantidadDispositivosXtipo();
     }
 
-
+    @Override
+    public TipoDispositivo listarId(int id) {
+        return mR.findById(id).orElse(new TipoDispositivo());
+    }
 }
 

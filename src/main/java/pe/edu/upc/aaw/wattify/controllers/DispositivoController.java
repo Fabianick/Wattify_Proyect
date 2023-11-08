@@ -43,6 +43,14 @@ public class DispositivoController {
         dS.insert(u);
     }
 
+    @GetMapping("/{id}")
+    public DispositivoDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        DispositivoDTO dto=m.map(dS.listarId(id),DispositivoDTO.class);
+        return dto;
+    }
+
+
     @GetMapping("/buscarNombre")
     public DispositivoDTO listarName(String nombre) {
         ModelMapper m = new ModelMapper();

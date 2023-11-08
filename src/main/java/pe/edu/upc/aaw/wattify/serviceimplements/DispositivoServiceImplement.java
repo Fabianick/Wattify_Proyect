@@ -32,4 +32,9 @@ public class DispositivoServiceImplement implements IDispositivoService {
     public Dispositivo findFirstByNombre(String nombre) {
         return dR.findFirstByNombre(nombre);
     }
+
+    @Override
+    public Dispositivo listarId(int idDispo) {
+        return dR.findById(idDispo).orElse(new Dispositivo());
+    }
 }

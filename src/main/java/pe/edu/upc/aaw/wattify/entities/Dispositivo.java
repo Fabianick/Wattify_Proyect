@@ -10,7 +10,7 @@ import java.util.Set;
 public class Dispositivo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Dispositivo;
+    private int idDispositivo;
     @Column(name = "nombre", nullable = false, length = 35)
     private String nombre;
     @Column(name = "descripcion", nullable = false, length = 350)
@@ -31,8 +31,8 @@ public class Dispositivo {
     public Dispositivo() {
     }
 
-    public Dispositivo(int id_Dispositivo, String nombre, String descripcion, int consumoHora, int horasEncendidas, LocalDate fecha, TipoDispositivo tipoDispositivo) {
-        this.id_Dispositivo = id_Dispositivo;
+    public Dispositivo(int idDispositivo, String nombre, String descripcion, int consumoHora, int horasEncendidas, LocalDate fecha, TipoDispositivo tipoDispositivo) {
+        this.idDispositivo = idDispositivo;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.consumoHora = consumoHora;
@@ -41,12 +41,12 @@ public class Dispositivo {
         this.tipoDispositivo = tipoDispositivo;
     }
 
-    public int getId() {
-        return id_Dispositivo;
+    public int getIdDispositivo() {
+        return idDispositivo;
     }
 
-    public void setId(int id_Dispositivo) {
-        this.id_Dispositivo = id_Dispositivo;
+    public void setIdDispositivo(int idDispositivo) {
+        this.idDispositivo = idDispositivo;
     }
 
     public String getNombre() {
@@ -96,13 +96,4 @@ public class Dispositivo {
     public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
         this.tipoDispositivo = tipoDispositivo;
     }
-
-    /*
-    public List<Dispositivo_X_Usuario> getDispositivo_X_Usuario() {
-        return dispositivo_X_Usuario;
-    }
-
-    public void setDispositivo_X_Usuario(List<Dispositivo_X_Usuario> dispositivo_X_Usuario) {
-        this.dispositivo_X_Usuario = dispositivo_X_Usuario;
-    }*/
 }

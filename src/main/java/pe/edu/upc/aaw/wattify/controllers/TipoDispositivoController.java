@@ -21,7 +21,6 @@ public class TipoDispositivoController {
     private ITipoDispositivoService tipoDispositivoService;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody TipoDispositivoDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         TipoDispositivo tipoDispositivo = modelMapper.map(dto, TipoDispositivo.class);
@@ -29,7 +28,6 @@ public class TipoDispositivoController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public List<TipoDispositivoDTO> listar() {
         return tipoDispositivoService.list().stream().map(x -> {
             ModelMapper modelMapper = new ModelMapper();
@@ -38,21 +36,26 @@ public class TipoDispositivoController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public void eliminar(@PathVariable("id") Integer id) {
         tipoDispositivoService.delete(id);
     }
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN')or hasAuthority('USER')")
     public void actualizar(@RequestBody TipoDispositivoDTO dto){
         ModelMapper m = new ModelMapper();
         TipoDispositivo t=m.map(dto,TipoDispositivo.class);
         tipoDispositivoService.insert(t);
     }
 
+    @GetMapping("/{id}")
+    public TipoDispositivoDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        TipoDispositivoDTO dto=m.map(tipoDispositivoService.listarId(id),TipoDispositivoDTO.class);
+        return dto;
+    }
+
+
     @GetMapping("/CantidadDeDispositivosXTipo")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<DispositivosXTiposDTO> cantidadTotalDeDispositivosPortioDeDispositivo() {
         List<String[]> lista = tipoDispositivoService.cantidadDispositivosXtipo();
         List<DispositivosXTiposDTO> listaDTO = new ArrayList<>();

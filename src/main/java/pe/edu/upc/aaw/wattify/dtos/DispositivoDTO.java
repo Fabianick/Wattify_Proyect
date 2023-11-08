@@ -5,7 +5,7 @@ import pe.edu.upc.aaw.wattify.entities.TipoDispositivo;
 import java.time.LocalDate;
 
 public class DispositivoDTO {
-    private int id_Dispositivo;
+    private int idDispositivo;
     private String nombre;
     private String descripcion;
     private int consumoHora;
@@ -13,12 +13,12 @@ public class DispositivoDTO {
     private LocalDate fecha;
     private TipoDispositivo tipoDispositivo;
 
-    public int getId() {
-        return id_Dispositivo;
+    public int getIdDispositivo() {
+        return idDispositivo;
     }
 
-    public void setId(int id_Dispositivo) {
-        this.id_Dispositivo = id_Dispositivo;
+    public void setIdDispositivo(int idDispositivo) {
+        this.idDispositivo = idDispositivo;
     }
 
     public String getNombre() {

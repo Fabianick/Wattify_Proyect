@@ -12,7 +12,7 @@ public class Dispositivo_X_Usuario {
     private int cantidadDispositivos;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_Dispositivo", referencedColumnName = "id_Dispositivo")
+    @JoinColumn(name = "idDispositivo", referencedColumnName = "idDispositivo")
     private Dispositivo dispositivo;
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id", referencedColumnName = "id")

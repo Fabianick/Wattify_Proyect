@@ -13,4 +13,6 @@ public interface IDispositivoService {
 
     Dispositivo findFirstByNombre(String nombre);
 
+    public Dispositivo listarId(int idDispo);
+
 }
