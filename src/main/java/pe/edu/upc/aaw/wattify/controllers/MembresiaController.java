@@ -23,7 +23,6 @@ public class MembresiaController {
     private IMembresiaService mS;
 
     @PostMapping
-    @PreAuthorize("hasAuthority('ADMIN')")
     public void registrar(@RequestBody MembresiaDTO dto) {
         ModelMapper m = new ModelMapper();
         Membresia mb = m.map(dto, Membresia.class);
@@ -31,7 +30,6 @@ public class MembresiaController {
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public List<MembresiaDTO> listar() {
         return mS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -40,14 +38,12 @@ public class MembresiaController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public void eliminar(@PathVariable("id") Integer id) {
         mS.delete(id);
     }
 
 
     @PutMapping
-    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
     public void modificar(@RequestBody MembresiaDTO dto) {
         ModelMapper m = new ModelMapper();
         Membresia mb = m.map(dto, Membresia.class);
@@ -55,7 +51,6 @@ public class MembresiaController {
     }
 
     @GetMapping("/usersXMontoXMembresia")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<Membresia_X_UsersDTO> UsuarioMontoRecaudadoXTipoMembresia() {
         List<String[]> lista = mS.CantUsuariosXTipoMembresiaXMontoRecaudado();
         List<Membresia_X_UsersDTO> listaDTO = new ArrayList<>();
