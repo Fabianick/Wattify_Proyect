@@ -12,7 +12,7 @@ public class Detalle_pago {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "idComprobante_pago")
+    @JoinColumn(name = "comprobante_pago")
     private Comprobante_pago comprobante_pago;
 
     @Column(name = "Consumo_dispositivo", length = 50, nullable = false)
@@ -28,7 +28,7 @@ public class Detalle_pago {
     private int Sub_total_pago;
 
     @ManyToOne
-    @JoinColumn(name = "idMembresia")
+    @JoinColumn(name = "membresia")
     private Membresia membresia;
 
     public Detalle_pago() {
