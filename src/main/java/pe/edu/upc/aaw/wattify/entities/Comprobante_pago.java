@@ -22,8 +22,8 @@ public class Comprobante_pago {
     @JoinColumn(name = "idUser")
     private Users user;
 
-    @Column(name = "Costo_total", length = 50, nullable = false)
-    private int Costo_total;
+    @Column(name = "costo_total", length = 50, nullable = false)
+    private int costo_total;
 
     public Comprobante_pago() {
     }
@@ -33,7 +33,7 @@ public class Comprobante_pago {
         this.fechaEmision = fechaEmision;
         this.metodo_de_pago = metodo_de_pago;
         this.user = user;
-        Costo_total = costo_total;
+        this.costo_total = costo_total;
     }
 
     public int getId() {
@@ -69,10 +69,10 @@ public class Comprobante_pago {
     }
 
     public int getCosto_total() {
-        return Costo_total;
+        return costo_total;
     }
 
     public void setCosto_total(int costo_total) {
-        Costo_total = costo_total;
+        costo_total = costo_total;
     }
 }
