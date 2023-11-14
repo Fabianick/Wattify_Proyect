@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.wattify.dtos.DispositivoDTO;
 import pe.edu.upc.aaw.wattify.dtos.MembresiaDTO;
 import pe.edu.upc.aaw.wattify.dtos.Membresia_X_UsersDTO;
 import pe.edu.upc.aaw.wattify.entities.Membresia;
@@ -48,6 +49,13 @@ public class MembresiaController {
         ModelMapper m = new ModelMapper();
         Membresia mb = m.map(dto, Membresia.class);
         mS.insert(mb);
+    }
+
+    @GetMapping("/{id}")
+    public MembresiaDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m = new ModelMapper();
+        MembresiaDTO dto=m.map(mS.listarId(id),MembresiaDTO.class);
+        return dto;
     }
 
     @GetMapping("/usersXMontoXMembresia")

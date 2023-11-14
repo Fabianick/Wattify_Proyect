@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.wattify.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.wattify.entities.Dispositivo;
 import pe.edu.upc.aaw.wattify.entities.Membresia;
 import pe.edu.upc.aaw.wattify.repositories.IMembresiaRepository;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IMembresiaService;
@@ -32,5 +33,10 @@ public class MembresiaServiceImplement implements IMembresiaService {
     @Override
     public List<String[]> CantUsuariosXTipoMembresiaXMontoRecaudado() {
         return mR.CantUsuariosXTipoMembresiaXMontoRecaudado();
+    }
+
+    @Override
+    public Membresia listarId(int idMembre) {
+        return mR.findById(idMembre).orElse(new Membresia());
     }
 }
