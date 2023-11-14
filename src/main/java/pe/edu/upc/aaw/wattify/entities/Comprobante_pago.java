@@ -72,7 +72,6 @@ public class Comprobante_pago {
         return costo_total;
     }
 
-    public void setCosto_total(int costo_total) {
-        costo_total = costo_total;
+    public void setCosto_total(int costo_total) {this.costo_total = costo_total;
     }
 }
