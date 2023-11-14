@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/membresias")
+@RequestMapping("/membresia")
 
 public class MembresiaController {
 
@@ -57,6 +57,7 @@ public class MembresiaController {
         MembresiaDTO dto=m.map(mS.listarId(id),MembresiaDTO.class);
         return dto;
     }
+    
 
     @GetMapping("/usersXMontoXMembresia")
     public List<Membresia_X_UsersDTO> UsuarioMontoRecaudadoXTipoMembresia() {
