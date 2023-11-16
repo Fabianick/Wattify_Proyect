@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.wattify.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
+import pe.edu.upc.aaw.wattify.entities.Dispositivo;
 import pe.edu.upc.aaw.wattify.repositories.IComprobantepagoRepository;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IComprobantePagoService;
 
@@ -33,6 +34,11 @@ public class ComprobantePagoServiceImplement implements IComprobantePagoService 
     public List<String[]> SumaTotalXMetodoPago() {
         return mR.SumaTotalXMetodoPago();
     }
+    @Override
+    public Comprobante_pago listarId(int id) {
+        return mR.findById(id).orElse(new Comprobante_pago());
+    }
+
 
 
 }
