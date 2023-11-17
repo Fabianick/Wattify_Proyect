@@ -11,7 +11,7 @@ public class DispositivoDTO {
     private int consumoHora;
     private int horasEncendidas;
     private LocalDate fecha;
-    private TipoDispositivo tipoDispositivo;
+    private TipoDispositivoDTO tipoDispositivo;
 
     public int getIdDispositivo() {
         return idDispositivo;
@@ -61,11 +61,11 @@ public class DispositivoDTO {
         this.fecha = fecha;
     }
 
-    public TipoDispositivo getTipoDispositivo() {
+    public TipoDispositivoDTO getTipoDispositivo() {
         return tipoDispositivo;
     }
 
-    public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
+    public void setTipoDispositivo(TipoDispositivoDTO tipoDispositivo) {
         this.tipoDispositivo = tipoDispositivo;
     }
 }

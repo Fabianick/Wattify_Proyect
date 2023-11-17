@@ -22,7 +22,7 @@ public class Dispositivo {
     @Column(name = "fecha", nullable = false)
     private LocalDate fecha;
     @ManyToOne
-    @JoinColumn(name = "idTipoDispositivo")
+    @JoinColumn(name = "idTipoDispo")
     private TipoDispositivo tipoDispositivo;
 
     //@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
