@@ -26,8 +26,8 @@ public class ComprobantePagoServiceImplement implements IComprobantePagoService 
     }
 
     @Override
-    public void delete(int idComprobantepago) {
-        mR.deleteById(idComprobantepago);
+    public void delete(int id) {
+        mR.deleteById(id);
     }
 
     @Override
