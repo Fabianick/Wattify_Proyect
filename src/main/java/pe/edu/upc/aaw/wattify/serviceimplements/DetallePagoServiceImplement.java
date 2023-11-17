@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.wattify.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
 import pe.edu.upc.aaw.wattify.entities.Detalle_pago;
 import pe.edu.upc.aaw.wattify.repositories.IDetallepagoRepository;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IDetallepagoService;
@@ -25,10 +26,12 @@ public class DetallePagoServiceImplement implements IDetallepagoService {
     }
 
     @Override
-    public void delete(int idDetallePago) {
-        mR.deleteById(idDetallePago);
+    public void delete(int id) {
+        mR.deleteById(id);
     }
-
-
+    @Override
+    public Detalle_pago listarId(int id) {
+        return mR.findById(id).orElse(new Detalle_pago());
+    }
 
 }

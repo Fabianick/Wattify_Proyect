@@ -4,8 +4,10 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import pe.edu.upc.aaw.wattify.dtos.ComprobantePagoDTO;
 import pe.edu.upc.aaw.wattify.dtos.DetallePagoDTO;
 
+import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
 import pe.edu.upc.aaw.wattify.entities.Detalle_pago;
 
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IDetallepagoService;
@@ -40,5 +42,19 @@ public class DetallePagoController {
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         mS.delete(id);
+    }
+
+    @PutMapping
+    public void actualizar(@RequestBody DetallePagoDTO dto) {
+        ModelMapper m = new ModelMapper();
+        Detalle_pago d = m.map(dto, Detalle_pago.class);
+        mS.insert(d);
+    }
+
+    @GetMapping("/{id}")
+    public DetallePagoDTO listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        DetallePagoDTO dto=m.map(mS.listarId(id),DetallePagoDTO.class);
+        return dto;
     }
 }

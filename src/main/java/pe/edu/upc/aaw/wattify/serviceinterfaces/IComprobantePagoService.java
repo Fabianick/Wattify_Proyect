@@ -9,7 +9,7 @@ import java.util.List;
 public interface IComprobantePagoService {
     public void insert(Comprobante_pago comprobante_pago);
     public List<Comprobante_pago> list();
-    public void delete(int idComprobantepago);
+    public void delete(int id);
 
     public List<String[]> SumaTotalXMetodoPago();
 

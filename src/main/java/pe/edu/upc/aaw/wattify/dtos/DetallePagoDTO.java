@@ -5,11 +5,11 @@ import pe.edu.upc.aaw.wattify.entities.Membresia;
 
 public class DetallePagoDTO {
     private int id;
-    private Comprobante_pago comprobante_pago;
     private int consumo_dispositivo;
     private int cantidad_dispositivo;
     private int costo_dispositivo;
     private int sub_total_pago;
+    private Comprobante_pago comprobante_pago;
     private Membresia membresia;
 
     public int getId() {

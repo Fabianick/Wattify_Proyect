@@ -11,10 +11,6 @@ public class Detalle_pago {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne
-    @JoinColumn(name = "comprobante_pago")
-    private Comprobante_pago comprobante_pago;
-
     @Column(name = "consumo_dispositivo", length = 50, nullable = false)
     private int consumo_dispositivo;
 
@@ -26,6 +22,10 @@ public class Detalle_pago {
 
     @Column(name = "sub_total_pago", length = 50, nullable = false)
     private int sub_total_pago;
+
+    @ManyToOne
+    @JoinColumn(name = "comprobante_pago")
+    private Comprobante_pago comprobante_pago;
 
     @ManyToOne
     @JoinColumn(name = "membresia")
