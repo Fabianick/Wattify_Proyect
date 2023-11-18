@@ -45,12 +45,32 @@ public class UsersController {
         uS.delete(id);
     }
 
-    @PutMapping
+    /*@PutMapping
     public void actualizar(@RequestBody UsersDTO dto){
         ModelMapper m = new ModelMapper();
         Users u=m.map(dto,Users.class);
         uS.insert(u);
+    }*/
+    @PutMapping("/{id}")
+    public void actualizar(@PathVariable("id") Long id, @RequestBody UsersDTO dto) {
+        Users usuarioExistente = uS.listarId(id);
+
+        if (usuarioExistente != null) {
+            usuarioExistente.setUsername(dto.getUsername());
+            usuarioExistente.setPassword(dto.getPassword());
+            usuarioExistente.setEnabled(dto.getEnabled());
+            usuarioExistente.setNombres(dto.getNombres());
+            usuarioExistente.setApellidos(dto.getApellidos());
+            usuarioExistente.setGenero(dto.getGenero());
+            usuarioExistente.setDireccion(dto.getDireccion());
+            usuarioExistente.setDNI(dto.getDNI());
+            usuarioExistente.setCelular(dto.getCelular());
+            uS.insert(usuarioExistente);
+        }
     }
+
+
+
 
     @GetMapping("/cantidadBygenero")
     public List<Usuario_CantidadDTO> Cantidad_usuaarios_by_genero(){
@@ -65,8 +85,5 @@ public class UsersController {
         return listaDTO;
     }
 
-    @PostMapping("/rolinsert")
-    public void insertarRol(@RequestParam("authority") String authority,@RequestParam("user_id") Long user_id){
-        uS.insRol(authority,user_id);
-    }
+
 }

@@ -28,11 +28,6 @@ public class UsersServiceImplement implements IUsersService {
     }
 
     @Override
-    public void insRol(String authority, Long user_id) {
-        uR.insRol(authority,user_id);
-    }
-
-    @Override
     public Users listarId(Long id) {
         return uR.findById(id).orElse(new Users());
     }

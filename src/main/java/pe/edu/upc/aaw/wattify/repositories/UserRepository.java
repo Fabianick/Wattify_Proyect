@@ -21,9 +21,5 @@ public interface UserRepository extends JpaRepository<Users, Long> {
             " FROM users u\n" +
             " GROUP BY genero",nativeQuery = true)
     List<String[]> cantidad_usuarios_bygenero();
-    //Insertar los Roles
-    @Transactional
-    @Modifying
-    @Query(value = "insert into roles (rol, user_id) VALUES (:rol, :user_id)", nativeQuery = true)
-    public void insRol(@Param("rol") String authority, @Param("user_id") Long user_id);
+
 }

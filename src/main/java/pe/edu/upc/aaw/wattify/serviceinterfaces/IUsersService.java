@@ -9,7 +9,6 @@ public interface IUsersService {
     public void insert(Users users);
     public List<Users>listar();
     public void delete(Long id);
-    public void insRol(String authority,Long user_id);
     public Users listarId(Long id);
     List<String[]> cantidad_usuarios_bygenero();
 

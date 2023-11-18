@@ -18,7 +18,22 @@ public class RoleServiceImplement implements IRoleService {
     }
 
     @Override
-    public void eliminar(long id) {
-        rR.deleteById(id);
+    public Role listarId(long idRole) {
+        return rR.findById(idRole).orElse(new Role());
+    }
+
+    @Override
+    public void insRol(String authority, Long user_id) {
+        rR.insRol(authority,user_id);
+    }
+
+    @Override
+    public void updRol(String authority, Long user_id) {
+        rR.updRol(authority,user_id);
+    }
+
+    @Override
+    public void delRol(Long user_id) {
+        rR.delRol(user_id);
     }
 }
