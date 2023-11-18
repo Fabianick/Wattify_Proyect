@@ -22,4 +22,5 @@ public interface ITipoDispositivoService {
 
     public TipoDispositivo listarId(int id);
 
+    public List<String[]> consumoTotaldeHoras();
 }

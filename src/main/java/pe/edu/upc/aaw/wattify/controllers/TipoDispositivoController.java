@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.aaw.wattify.dtos.ConsumoHorasDispositivoDTO;
 import pe.edu.upc.aaw.wattify.dtos.DispositivosXTiposDTO;
 import pe.edu.upc.aaw.wattify.dtos.TipoDispositivoDTO;
 import pe.edu.upc.aaw.wattify.entities.TipoDispositivo;
@@ -63,6 +64,18 @@ public class TipoDispositivoController {
             DispositivosXTiposDTO dto = new DispositivosXTiposDTO();
             dto.setNombre_tipo_dispositivo(data[0]);
             dto.setCantidad_de_dispositivos(Integer.parseInt(data[1]));
+            listaDTO.add(dto);
+        }
+        return listaDTO;
+    }
+    @GetMapping("/ConsumoHorasByTipoDispositivo")
+    public List<ConsumoHorasDispositivoDTO> consumoTipoDispositivo() {
+        List<String[]> lista = tipoDispositivoService.consumoTotaldeHoras();
+        List<ConsumoHorasDispositivoDTO> listaDTO = new ArrayList<>();
+        for (String[] data : lista) {
+            ConsumoHorasDispositivoDTO dto = new ConsumoHorasDispositivoDTO();
+            dto.setNombre_tipo_dispositivo(data[0]);
+            dto.setSum(Integer.parseInt(data[1]));
             listaDTO.add(dto);
         }
         return listaDTO;

@@ -14,4 +14,13 @@ public interface ITipoDispositivoRepository extends JpaRepository<TipoDispositiv
             " on td.id_tipo_dispositivo = d.id_tipo_dispo\n" +
             " group by td.nombre_tipo_dispositivo",nativeQuery = true)
     public List<String[]> cantidadDispositivosXtipo();
+
+
+
+    @Query(value = "select  td.nombre_tipo_dispositivo, sum(d.consumo_hora) from tipo_dispositivo td join dispositivo d \n" +
+            "on td.id_tipo_dispositivo = d.id_tipo_dispo\n" +
+            "group by td.nombre_tipo_dispositivo",nativeQuery = true)
+    public List<String[]> consumoTotaldeHoras();
+
+
 }

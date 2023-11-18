@@ -42,5 +42,12 @@ public class TipoDispositivoServiceImplements implements ITipoDispositivoService
     public TipoDispositivo listarId(int id) {
         return mR.findById(id).orElse(new TipoDispositivo());
     }
+
+    @Override
+    public List<String[]> consumoTotaldeHoras() {
+        return mR.consumoTotaldeHoras();
+    }
+
+
 }
 
