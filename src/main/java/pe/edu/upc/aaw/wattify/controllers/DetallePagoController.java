@@ -4,15 +4,12 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import pe.edu.upc.aaw.wattify.dtos.ComprobantePagoDTO;
 import pe.edu.upc.aaw.wattify.dtos.DetallePagoDTO;
 
-import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
 import pe.edu.upc.aaw.wattify.entities.Detalle_pago;
 
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IDetallepagoService;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 

@@ -9,8 +9,8 @@ public class DetallePagoDTO {
     private int cantidad_dispositivo;
     private int costo_dispositivo;
     private int sub_total_pago;
-    private Comprobante_pago comprobante_pago;
-    private Membresia membresia;
+    private ComprobantePagoDTO comprobante_pago;
+    private MembresiaDTO membresia;
 
     public int getId() {
         return id;
@@ -18,14 +18,6 @@ public class DetallePagoDTO {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Comprobante_pago getComprobante_pago() {
-        return comprobante_pago;
-    }
-
-    public void setComprobante_pago(Comprobante_pago comprobante_pago) {
-        this.comprobante_pago = comprobante_pago;
     }
 
     public int getConsumo_dispositivo() {
@@ -60,11 +52,19 @@ public class DetallePagoDTO {
         this.sub_total_pago = sub_total_pago;
     }
 
-    public Membresia getMembresia() {
+    public ComprobantePagoDTO getComprobante_pago() {
+        return comprobante_pago;
+    }
+
+    public void setComprobante_pago(ComprobantePagoDTO comprobante_pago) {
+        this.comprobante_pago = comprobante_pago;
+    }
+
+    public MembresiaDTO getMembresia() {
         return membresia;
     }
 
-    public void setMembresia(Membresia membresia) {
+    public void setMembresia(MembresiaDTO membresia) {
         this.membresia = membresia;
     }
 }

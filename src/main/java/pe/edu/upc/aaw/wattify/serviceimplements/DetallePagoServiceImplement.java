@@ -2,7 +2,6 @@ package pe.edu.upc.aaw.wattify.serviceimplements;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pe.edu.upc.aaw.wattify.entities.Comprobante_pago;
 import pe.edu.upc.aaw.wattify.entities.Detalle_pago;
 import pe.edu.upc.aaw.wattify.repositories.IDetallepagoRepository;
 import pe.edu.upc.aaw.wattify.serviceinterfaces.IDetallepagoService;
