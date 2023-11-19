@@ -60,7 +60,6 @@ public class ComprobantePagoController {
     }
 
     @GetMapping("/SumaTotalXMetodoPago")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public List<SumaTotal_X_MetodoPagoDTO> SumaTotalXMetodoPago(){
         List<String[]> lista = mS.SumaTotalXMetodoPago();
         List<SumaTotal_X_MetodoPagoDTO> listaDTO = new ArrayList<>();
