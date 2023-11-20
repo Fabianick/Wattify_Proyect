@@ -7,7 +7,7 @@ public class Dispositivo_x_UauarioDTO {
     private int id_DxUsuario;
     private int cantidadDispositivos;
     private Dispositivo dispositivo;
-    private Users users;
+    private UsersDTO users;
 
     public int getId_DxUsuario() {
         return id_DxUsuario;
@@ -33,11 +33,11 @@ public class Dispositivo_x_UauarioDTO {
         this.dispositivo = dispositivo;
     }
 
-    public Users getUsers() {
+    public UsersDTO getUsers() {
         return users;
     }
 
-    public void setUsers(Users users) {
+    public void setUsers(UsersDTO users) {
         this.users = users;
     }
 }

@@ -26,4 +26,12 @@ public interface RoleRepository extends JpaRepository<Role, Long> {
     @Query(value = "DELETE FROM roles WHERE user_id = :user_id", nativeQuery = true)
     public void delRol(@Param("user_id") Long user_id);
 
+    @Transactional
+    @Modifying
+    @Query(value = "INSERT INTO roles (rol, user_id)\n" +
+            " SELECT 'USER', id FROM users ORDER BY id DESC LIMIT 1;", nativeQuery = true)
+    public void insRolLog();
+
+
+
 }

@@ -49,4 +49,8 @@ public class RoleController {
     }
 
 
+    @PostMapping("/insrollog")
+    public void isertrologin(){
+        rS.insRolLog();
+    }
 }

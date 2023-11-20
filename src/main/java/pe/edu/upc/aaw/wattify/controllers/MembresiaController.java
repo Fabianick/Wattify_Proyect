@@ -57,10 +57,10 @@ public class MembresiaController {
         MembresiaDTO dto=m.map(mS.listarId(id),MembresiaDTO.class);
         return dto;
     }
-    
 
-    @GetMapping("/usersXMontoXMembresia")
-    public List<Membresia_X_UsersDTO> UsuarioMontoRecaudadoXTipoMembresia() {
+
+    @GetMapping("/usersXMembresiaXMontoRecaudado")
+    public List<Membresia_X_UsersDTO> UsuarioPorMembresiaYMonto() {
         List<String[]> lista = mS.CantUsuariosXTipoMembresiaXMontoRecaudado();
         List<Membresia_X_UsersDTO> listaDTO = new ArrayList<>();
         for (String[] data : lista) {

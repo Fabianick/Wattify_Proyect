@@ -18,14 +18,14 @@ public class DispositivoXusuarioControllers {
     @Autowired
     private IDispositivoXUsuarioService duS;
 
-    @PostMapping("/Registrar")
+    @PostMapping()
     public void registrar(@RequestBody Dispositivo_x_UauarioDTO dto) {
         ModelMapper m = new ModelMapper();
         Dispositivo_X_Usuario du = m.map(dto, Dispositivo_X_Usuario.class);
         duS.insert(du);
     }
 
-    @GetMapping("/Listar")
+    @GetMapping()
     public List<Dispositivo_x_UauarioDTO> listar() {
         return duS.list().stream().map(x -> {
             ModelMapper m = new ModelMapper();
@@ -43,5 +43,12 @@ public class DispositivoXusuarioControllers {
         ModelMapper m = new ModelMapper();
         Dispositivo_X_Usuario u = m.map(dto, Dispositivo_X_Usuario.class);
         duS.insert(u);
+    }
+
+    @GetMapping("/{id}")
+    public Dispositivo_X_Usuario listarId(@PathVariable("id") Integer id) {
+        ModelMapper m=new ModelMapper();
+        Dispositivo_X_Usuario dto=m.map(duS.listarId(id),Dispositivo_X_Usuario.class);
+        return dto;
     }
 }

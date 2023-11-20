@@ -15,5 +15,7 @@ public interface IRoleService {
 
     public void delRol(@Param("user_id") Long user_id);
 
+    public void insRolLog();
+
 
 }

@@ -36,4 +36,9 @@ public class RoleServiceImplement implements IRoleService {
     public void delRol(Long user_id) {
         rR.delRol(user_id);
     }
+
+    @Override
+    public void insRolLog() {
+        rR.insRolLog();
+    }
 }

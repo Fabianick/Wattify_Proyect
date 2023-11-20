@@ -29,5 +29,10 @@ public class MetododePagoServiceImplement implements IMetododePagoService {
         mR.deleteById(id_MetodoPago);
     }
 
+    @Override
+    public Metodo_de_Pago listarId(int Metodo_de_Pago) {
+        return mR.findById(Metodo_de_Pago).orElse(new Metodo_de_Pago());
+    }
+
 
 }
